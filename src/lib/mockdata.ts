@@ -4,7 +4,8 @@ export type Product = {
     price: number;
     description: string;
     image: string;
-    category: string;
+    categoryId : string;
+    slug:string;
 };
 
 export const MockProduct: Product[] = [
