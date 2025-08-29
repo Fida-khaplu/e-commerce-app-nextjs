@@ -1,9 +1,11 @@
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Product } from "@/lib/mockdata";
 import Image from "next/image";
 
 export function ProductCard({ product }: { product: Product }) {
     return (
-        <div className="border border-gray-200 rounded-lg gap-3 ">
+        // <div className="border border-gray-200 rounded-lg gap-3 ">
+            <Card className=" pt-0 overflow-hidden">
             <Image
                 src={product.image}
                 alt={product.name}
@@ -12,11 +14,23 @@ export function ProductCard({ product }: { product: Product }) {
                 width={500}
                 height={100}
             />
-            <p className=" text-lg font-semibold">{product.name}</p>
-            <p>{product.price.toFixed(2)}</p>
-            <p>{product.description}</p>
-            <p>{product.category}</p>
-        </div>
+            <CardHeader>
+                <CardTitle>
+                    <p className=" text-lg font-semibold">{product.name}</p>
+                </CardTitle>
+                <CardDescription>
+                     <p>{product.description}</p>
+                </CardDescription>
+            </CardHeader>
+            
+            <CardFooter>
+                <p>{product.price.toFixed(2)}</p>
+            </CardFooter>
+           
+            
+            {/* <p>{product.category}</p> */}
+            </Card>
+        // </div>
     )
 
 }
