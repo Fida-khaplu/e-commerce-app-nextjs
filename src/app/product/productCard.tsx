@@ -5,6 +5,7 @@ import Image from "next/image";
 export function ProductCard({ product }: { product: Product }) {
     return (
         // <div className="border border-gray-200 rounded-lg gap-3 ">
+        //  here using card from shadcn
             <Card className=" pt-0 overflow-hidden">
             <Image
                 src={product.image}
